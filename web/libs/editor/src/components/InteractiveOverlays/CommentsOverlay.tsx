@@ -132,7 +132,7 @@ const ResultTagBbox: React.FC<ResultItemProps> = observer(({ result, rootRef }) 
   if (bbox.width < 1 || bbox.height < 1) return null;
 
   const itemStyle = (id: number) => {
-    const colors = ["red", "yellow", "blue", "green"];
+    const colors = ["red", "blue", "yellow", "green"];
     return {
       pointerEvents: "all" as const,
       stroke: colors[id % colors.length],
