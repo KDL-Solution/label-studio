@@ -286,7 +286,7 @@ const PolygonPointView = observer(({ item, name }) => {
     },
   };
 
-  const fill = item.selected ? "green" : "white";
+  const fill = item.index === 0 ? (regionStyles.strokeColor || item.primary) : (item.selected ? "green" : (item.index % 3 === 1 ? "blue" : (item.index % 3 === 2 ? "yellow" : "green")));
 
   if (item.style === "circle") {
     return (
