@@ -131,14 +131,11 @@ const ResultTagBbox: React.FC<ResultItemProps> = observer(({ result, rootRef }) 
   if (!root || !node || isHidden) return null;
   if (bbox.width < 1 || bbox.height < 1) return null;
 
-  const itemStyle = (id: number) => {
-    const colors = ["red", "blue", "yellow", "green"];
-    return {
-      pointerEvents: "all" as const,
-      stroke: colors[id % colors.length],
-      strokeDasharray: hovered ? undefined : "4 2",
-      cursor: "crosshair",
-    };
+  const itemStyle = {
+    pointerEvents: "all" as const,
+    stroke: "var(--grape_600)",
+    strokeDasharray: hovered ? undefined : "4 2",
+    cursor: "crosshair",
   };
 
   return (
@@ -146,7 +143,7 @@ const ResultTagBbox: React.FC<ResultItemProps> = observer(({ result, rootRef }) 
       {...bbox}
       rx={3}
       ry={3}
-      style={itemStyle(result.id)}
+      style={itemStyle}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       stroke="red"
