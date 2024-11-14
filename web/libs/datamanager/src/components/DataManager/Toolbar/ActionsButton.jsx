@@ -148,10 +148,12 @@ export const ActionsButton = injector(
         content={
           isNewUI ? (
             <Block tag={Menu} name="actionmenu" size="compact" mod={{ newUI: isNewUI }}>
-              {actionButtons}
+              {/*{actionButtons}*/}
             </Block>
           ) : (
-            <Menu size="compact">{actionButtons}</Menu>
+            <Menu size="compact">{
+              // actionButtons
+            }</Menu>
           )
         }
         openUpwardForShortViewport={false}
